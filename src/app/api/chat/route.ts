@@ -4,7 +4,11 @@ import axios from 'axios';
 export async function POST(request: Request) {
   try {
     // Log request details
-    console.log('Request Headers:', Object.fromEntries(request.headers));
+    const headersObj: Record<string, string> = {};
+    request.headers.forEach((value, key) => {
+      headersObj[key] = value;
+    });
+    console.log('Request Headers:', headersObj);
     
     // Verify content type
     const contentType = request.headers.get('content-type');

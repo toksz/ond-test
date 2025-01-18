@@ -1,4 +1,4 @@
-import React from "react";
+import * as React from "react";
 import ChatInterface from "./ChatInterface";
 
 export default function Home() {
